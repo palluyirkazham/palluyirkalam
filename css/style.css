@@ -342,7 +342,7 @@ button {
 .agriculture_text {
     width: 100%;
     float: left;
-    font-size: 90px;
+    font-size: 50px;
     color: #ffffff;
     font-weight: bold;
 }
@@ -350,7 +350,7 @@ button {
 .sub_text {
     width: 100%;
     float: left;
-    font-size: 40px;
+    font-size: 30px;
     color: #ffffff;
     font-weight: bold;
 }
@@ -420,7 +420,7 @@ button {
 .about_taital {
     width: 63%;
     float: right;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 .about_text {
