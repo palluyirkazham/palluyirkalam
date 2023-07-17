@@ -123,16 +123,32 @@ button:focus {
     outline: none;
 }
 
-ul,
+/* ul,
 li,
-ol {
+ol{
     margin: 0px;
     padding: 0px;
-    list-style: none;
+    list-style: None;
+} */
+
+.ul_no-list-style {
+    margin: 0px;
+    padding: 0px;
+    list-style: None;
+}
+  
+.ul_disc-list-style {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #ffffff;
+    margin-left: 0px;
+    margin: 0px;
+    list-style-type: disc;
 }
 
 p {
-    margin: 20px;
+    margin: 10px;
     font-weight: 300;
     font-size: 15px;
     line-height: 24px;
@@ -420,7 +436,7 @@ button {
 }
 
 .about_taital {
-    width: 63%;
+    width: 70%;
     float: right;
     margin-top: 20px;
 }
