@@ -10,6 +10,8 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>Contact</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
       <link rel = "icon" href ="images/logo.jpeg" 
         type = "image/x-icon">
       <meta name="keywords" content="">
@@ -97,7 +99,7 @@
                            </form>
                         </div>
                      </div>
-                     <div class="send_bt"><a onClick="sendMail(); return false">SEND</a></div> 
+                     <div class="send_bt"><a onClick="sendMail(); return true">SEND</a></div> 
                   </div>
                </div>
                <div class="col-md-6 padding_0">
@@ -182,19 +184,36 @@
       </script>
       <script>
          function sendMail() {
-            var link = "mailto:palluyirkazham@gmail.com"
-                     + "?cc=" + encodeURIComponent("Email")
-                     + "&subject=" + encodeURIComponent("Enquiry")
-                     + "&body=" + encodeURIComponent("NAME: ") 
-                     + encodeURIComponent(document.getElementById('Name').value)
-                     + encodeURIComponent("PHONE: ")
-                     + encodeURIComponent(document.getElementById('Phone').value)
-                     + encodeURIComponent("MESSAGE: ")
-                     + encodeURIComponent(document.getElementById('text').value)
-            ;
-            
-            window.location.href = link;
+            let name = document.getElementById("Name").value;
+            let email = document.getElementById("Email").value;
+            let phone = document.getElementById("Phone").value;
+            let message = document.getElementById("text").value;
+            let finalmessage = `Name : ${name} <br>  Phone : ${phone} <br>  Email : ${email} <br>  Message : ${message} <br>`;
+            Email.send({
+               Host : "smtp.gmail.com",
+               Username : "palluyirkalamservices",
+               Password : "idaikadar1234$",
+               To : "palluyirkazham@gmail.com",
+               From : email,
+               Subject : "Test mail",
+               Body : finalmessage
+            }).then(
+               message => alert(message)
+            );
          }
+         //    var link = "mailto:palluyirkazham@gmail.com"
+         //             + "?cc=" + encodeURIComponent("Email")
+         //             + "&subject=" + encodeURIComponent("Enquiry")
+         //             + "&body=" + encodeURIComponent("NAME: ") 
+         //             + encodeURIComponent(document.getElementById('Name').value)
+         //             + encodeURIComponent("PHONE: ")
+         //             + encodeURIComponent(document.getElementById('Phone').value)
+         //             + encodeURIComponent("MESSAGE: ")
+         //             + encodeURIComponent(document.getElementById('text').value)
+         //    ;
+            
+         //    window.location.href = link;
+         // }
       </script>
    </body>
 </html>
